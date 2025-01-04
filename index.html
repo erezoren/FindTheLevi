@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Who Is the real Levi???</title>
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <script>
+    document.getElementById("image-container").addEventListener("click", function () {
+
+    });
+
+    function showHidden(){
+      const firstImage = document.getElementById("first-image");
+      const secondImage = document.getElementById("second-image");
+
+      if (firstImage.style.display !== "none") {
+        firstImage.style.display = "none";
+        secondImage.style.display = "block";
+      } else {
+        firstImage.style.display = "block";
+        secondImage.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+<div class="image-container" onclick="showHidden()">
+  <img id="first-image" src="./img/half.png" alt="Half">
+  <img id="second-image" src="./img/full.png" alt="Fill" style="display: none;">
+</div>
+
+</body>
+</html>
