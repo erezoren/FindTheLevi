@@ -9,24 +9,30 @@
 
     });
 
-    function showHidden(){
+    function showHidden(correct){
       const firstImage = document.getElementById("first-image");
       const secondImage = document.getElementById("second-image");
-
-      if (firstImage.style.display !== "none") {
-        firstImage.style.display = "none";
-        secondImage.style.display = "block";
-      } else {
+      if(!correct){
+        document.getElementById("message").style.color="red";
+        document.getElementById("message").innerHTML = "<strong>טעית! בושה! נסה שנית</strong>";
         firstImage.style.display = "block";
         secondImage.style.display = "none";
+        return;
       }
+      document.getElementById("message").style.color="blue";
+      document.getElementById("message").innerHTML = "<strong>כל הכבוד!</strong>";
+      firstImage.style.display = "none";
+      secondImage.style.display = "block";
     }
   </script>
 </head>
 <body>
-<div class="image-container" onclick="showHidden()">
+<div class="image-container">
+  <button class="button btn1" onclick="showHidden(false)">↓ זה לוי</button>
+  <button class="button btn2" onclick="showHidden(true)">↓ זה לוי</button>
   <img id="first-image" src="./img/half.png" alt="Half">
   <img id="second-image" src="./img/full.png" alt="Fill" style="display: none;">
+  <div class="text-overlay" id="message"/>
 </div>
 
 </body>

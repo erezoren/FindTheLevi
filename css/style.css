@@ -172,9 +172,9 @@ textarea {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -248,29 +248,51 @@ textarea {
 
 .image-container {
   position: relative;
+  display: inline-block;
   width: 300px; /* Adjust size */
   height: 200px; /* Adjust size */
 }
 
-.image-visible, .image-hidden {
+
+.button {
   position: absolute;
-  top: 0;
-  left: 0;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  width: 50%;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.btn1{
+  top: 245%;
+  left: 134%;
+}
+.btn2 {
+  top: 245%;
+  left: 225%;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 300%;
+  transform: translate(-50%, -50%); /* Centers the text */
+  color: white;
+  text-align: center;
+  /*background-color: rgba(0, 0, 0, 0.5); !* Adds a semi-transparent background *!*/
+  padding: 10px 20px;
+  border-radius: 8px;
+  direction: rtl;
+  text-align: right;
   width: 100%;
-  height: 100%;
-  transition: opacity 0.5s;
-}
-
-.image-hidden {
-  opacity: 0;
-}
-
-.image-container:hover .image-hidden,
-.image-container:active .image-hidden {
-  opacity: 1;
-}
-
-.image-container:hover .image-visible,
-.image-container:active .image-visible {
-  opacity: 0;
+  float: right;
+  color: red;
+  font-size: 150%;
 }
